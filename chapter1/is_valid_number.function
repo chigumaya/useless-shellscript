@@ -1,0 +1,8 @@
+is_valid_number(){
+    case "$1" in
+    *[!0-9]*) return 1;;  # 0-9 以外の文字が含まれている場合
+    *)        return 0;;  # それ以外(0-9だけで構成されている文字列)の場合
+    esac
+}
+
+is_valid_number "$1" && [[ $1 -eq 1 ]]

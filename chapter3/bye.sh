@@ -1,0 +1,10 @@
+sleep 3
+echo goodbye
+sleep 3
+echo goodbye
+sleep 3
+echo goodbye
+sleep 3
+echo goodbye
+sleep 3
+echo goodbye

@@ -1,0 +1,10 @@
+sleep 3
+puts "goodbye"
+sleep 3
+puts "goodbye"
+sleep 3
+puts "goodbye"
+sleep 3
+puts "goodbye"
+sleep 3
+puts "goodbye"

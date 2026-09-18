@@ -1,0 +1,1 @@
+apple,200,x[$(echo hello world >&2)]
