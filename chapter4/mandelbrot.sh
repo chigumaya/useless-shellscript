@@ -8,8 +8,10 @@ sx=$(echo "(($X)*$k*2-$W+1)/2" | bc)
 sy=$(echo "(($Y)*$k*2-$W+1)/2" | bc)
 
 echo P2 $W $W $D
-for cy in $(seq $sy $((sy+W-1))); do
-  for cx in $(seq $sx $((sx+W-1))); do
+cy=$sy
+while [ $cy -lt $((sy+W)) ]; do
+  cx=$sx
+  while [ $cx -lt $((sx+W)) ]; do
     x=$cx
     y=$cy
     d=$D
@@ -25,5 +27,7 @@ for cy in $(seq $sy $((sy+W-1))); do
       fi
     done
     echo $d
+    cx=$((cx+1))
   done
+  cy=$((cy+1))
 done

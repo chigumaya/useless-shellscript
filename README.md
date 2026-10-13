@@ -17,6 +17,9 @@
 ```
 docker build -t useless . 
 ```
+
+あるいは、`Makefile` を用意しているので `make dockerimage` でもよい。
+
 #### 実行
 ```
 docker run --rm -it useless:latest
@@ -27,10 +30,6 @@ docker run --rm -it useless:latest
 ### スクリプト
 
 各章に掲載しているスクリプト。
-
-#### Makefile
-
-`chapter4`, `cover`, `omake` の各ディレクトリで `make` するだけ。
 
 #### chapter1
 
@@ -74,8 +73,9 @@ docker run --rm -it useless:latest
 - `primes-posix.sh`: リスト3.10 (*)
 - `fizzbuzz-posix.sh`: リスト3.11 (*)
 - `fib.sh`: リスト3.12 (*)
+- `bf.sh`: リスト3.13 (*)
 
-(*) を付したファイルを実行すると、自己追記してファイルを破壊することに注意。
+(*) を付したファイルは、実行すると自己追記してファイルを破壊することに注意。
 
 #### chapter4
 
@@ -95,7 +95,8 @@ docker run --rm -it useless:latest
 - `dragon.sh`: リスト4.13
 - `gosper.sh`: リスト4.14
 - `fractalplant.sh`: リスト4.15
-- `lifegame.sh`: リスト4.16をシェルスクリプトの形に修正したもの
+- `fractalplant2.sh`: 図4.13のソース(本文掲載なし)
+- `lifegame.sh`: リスト4.16のワンライナーをシェルスクリプトの形に修正したもの
   - `sh lifegame.sh < input.jpg > output.gif` の形で実行する
 - `sierpinski.sh`: リスト4.17
 
@@ -111,7 +112,6 @@ docker run --rm -it useless:latest
 
 - `Makefile`: 以下のスクリプトを実行し、必要な範囲を切り取って保存するラッパー
 - `cover.sh`: 表紙、裏表紙、背表紙を連結した1枚の画像を生成(裏表紙に記載のスクリプト)
-- `print.sh`: 印刷版の扉ページに収録する画像(背表紙の文字を消す)
 - `trial.sh`: お試し版の表紙(「お試し版」の文字を入れる)
 - `adjust.sh`: 位置調整用の補助線を追加
 
@@ -121,7 +121,7 @@ docker run --rm -it useless:latest
 
 本文に収録しなかった役に立たないスクリプト。
 
-#### 1章、3章関連
+#### 1章、2章関連
 
 - `fib.sh`
   - フィボナッチ数列を計算する(算術式+記号化; `sha1sum`を利用)
@@ -143,6 +143,10 @@ L-systemを使うものでも、本文で紹介した `lsystem.function` は利�
 
 シェルピンスキーのギャスケット
 
+- `sierpinski.md`
+  - 本文リスト4.17の解説
+- `sierpinski-nosym.md`
+  - 本文リスト4.17の記号・特殊変数をわかりやすい文字列に置換したもの
 - `sierpinski-lsystem.sh`
   - L-systemによるシェルピンスキーのギャスケットその1
 - `sierpinski-arrowhead.sh`
@@ -184,3 +188,7 @@ L-system
   - `awk -f wordle.awk` で実行
   - 本家に準じて、1日1問
   - debian 系のディストリビューションでは事前に `apt install wamerican` が必要
+
+## 履歴
+
+- 2026/11/23 `fa44b46` 初版第1刷 (技術書典21)

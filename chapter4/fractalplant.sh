@@ -1,20 +1,15 @@
 . lsystem.function
-x=65; y=385
+L=(0 -1 -2 -3 -4 -3 -2 -1 0 1 2 3 4 3 2 1)
+x=130; y=605
 X(){ :;}
 F(){
-  # c(): cos, s(): sin, "scale=0;a/1": 小数点以下切り捨て
-  dx=$(echo "a=5*c($i*25*3.1416/180); scale=0; a/1" | bc -l)
-  dy=$(echo "a=5*s($i*25*3.1416/180); scale=0; a/1" | bc -l)
-  xx=$x; yy=$y
-  x=$((x+dx))
-  y=$((y-dy))
-  echo M$xx $yy L$x $y
+  echo M$x $y L$((x+=L[i%16])) $((y+=L[(i+4)%16]))
 }
-i=3
-path=$(eval "$(lsystem 5 X F:FF "X:F+[[X]-X]-F[-FX]+X")")
+i=0
+path=$(eval "$(lsystem 6 X F:FF 'X:F+[[X]-X]-F[-FX]+X')")
 
 cat <<_EOF_
-<svg xmlns="http://www.w3.org/2000/svg" width="345" height="395">
+<svg xmlns="http://www.w3.org/2000/svg" width="365" height="615">
   <path d="$path" fill="none" stroke="black" />
 </svg>
 _EOF_

@@ -5,11 +5,11 @@ title2="シェルスクリプト読本"
 author="やまぐちたかのり"
 
 # 寸法 (カラー印刷用350dpi = 350pixel/25.4mm)
-W=4244          # 全幅 (塗り足し含む; 308mm)
-H=2976          # 全高 (塗り足し含む; 216mm)
+W=4269          # 全幅 (塗り足し含む; 309.8mm)
+H=2978          # 全高 (塗り足し含む; 216mm)
 wp=2039         # ページ幅 (塗り足しなし片面; 148mm)
 hp=2894         # ページ高 (塗り足しなし; 210mm)
-wb=84           # 背幅 (6mm)
+wb=107          # 背幅 (7.8mm)
 wr=$(((W-wp*2-wb)/2))   # 塗り足し幅 (3mm)
 x1=$((wr+wp+wb))        # 表1左端
 
@@ -56,17 +56,18 @@ cat <<_EOF_
       <stop offset="95%" stop-color="#98fb98"/>
     </linearGradient>
   </defs>
+  <rect x="0" y="0" width="100%" height="100%" fill="white"/>
   <rect x="0" y="$((wr+1400))" width="100%" height="1550" fill="url('#bg')"/>
   <path stroke="#f30" stroke-width="3" d="$path" transform="translate($((wr+2690)),$((wr+3328)))"/>
   <text x="$((x1+220))" y="$((wr+1360))" class="c1">$title1</text>
-  <text x="$((x1+215))" y="$((wr+1560))" class="c2">$title2</text>
+  <text x="$((x1+220))" y="$((wr+1560))" class="c2">$title2</text>
   <text x="$((x1+1435))" y="$((wr+2760))" class="b2">$author</text>
   <text x="$((wp+wr+wb/2))" y="$((wr+190))" writing-mode="vertical-rl">
     <tspan class="b1">$title1</tspan>
     <tspan class="b2">$title2</tspan>
     <tspan class="b2" y="$((H-wr-600))">$author</tspan>
   </text>
-  <rect x="$((wr+90))" y="$((wr+90))" width="1420" height="2000" fill="#ffffe0" fill-opacity="0.9" rx="20"/>
+  <rect x="$((wr+90))" y="$((wr+90))" width="1420" height="2020" fill="#ffffe0" fill-opacity="0.9" rx="20"/>
   <text y="$((wr+90))" style="font: 16pt Nimbus Mono PS, monospace; fill: gray;">
 $src
   </text>

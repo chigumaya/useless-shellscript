@@ -5,7 +5,7 @@ all:	ml.png A.png hermann-pbm.png hermann-svg.png \
 	fib-spiral.png fib-fractal.png fib-fractal-l.png \
 	mandelbrot-zsh.png mandelbrot.png mandelbrot2.png \
 	koch.png koch-snowflake.png dragon.png gosper.png \
-	fractalplant.png pig-lifegame.gif sierpinski.png
+	fractalplant.png fractalplant2.png pig-lifegame.gif sierpinski.png
 
 ml.png:			ml.SVG
 	$(SVGCONV) -o $@ $<
@@ -22,6 +22,7 @@ mandelbrot2.pgm:	mandelbrot.sh
 dragon.svg:		dragon.sh lsystem.function
 gosper.svg:		gosper.sh lsystem.function
 fractalplant.svg:	fractalplant.sh lsystem.function
+fractalplant2.svg:	fractalplant2.sh lsystem.function
 pig-lifegame.gif:	pig.jpg
 	cat $< | $(CONVERT) -delay 50 -loop 0 - \( +clone -monochrome \) $$(yes '( +clone -fx nn=p[-1,-1]+p[-1,0]+p[-1,1]+p[0,-1]+p[0,1]+p[1,-1]+p[1,0]+p[1,1];nn*(1-p)!=6&&nn!=5 )'| head -100) $@
 sierpinski.png:		sierpinski.sh

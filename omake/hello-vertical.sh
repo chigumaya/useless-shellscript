@@ -1,13 +1,13 @@
 H(){
-echo -n ${*:- };}
-l(){ exec 2>/dev/nu\
-ll; IFS=;}
-o(){ H "${1::0
-,1}";}
- 
+expr "$1" : '\(.\)'; }
+l(){ exec 2>/dev/null; }
+l
+o(){ printf %s $(H "$1" "
+,")
+ }
 while
 o $line
 read -r \
-line; do l
-done <$0
+line; do IFS=
+done < $0
 ! ねこ大好き
