@@ -123,6 +123,9 @@ docker run --rm -it useless:latest
 
 #### 1章、2章関連
 
+- `bf.sh`
+  - 算術式によるbrainfuckインタプリタ修正版
+  - 1章で紹介したbfインタプリタは算術式の再帰の深さ制限にひっかかってまともに動作しないものだったが、これを[akinomyoga氏の手法](https://qiita.com/akinomyoga/items/2dd3f341cf15dd9c330b)を使って事実上どんなbfコードも動くように修正したもの
 - `fib.sh`
   - フィボナッチ数列を計算する(算術式+記号化; `sha1sum`を利用)
   - ぐれさんによる[解説記事](https://gist.github.com/greymd/455a13bb6f757c5ccd00bfb155d525e2)
